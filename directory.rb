@@ -4,14 +4,20 @@ def input_students
   students = []
   # Ask user for input
   name = gets.chomp
+  
   puts "Enter a hobby "
   hobby = gets.chomp
-  puts "Where were they born?"
+  
+  puts "Which country were they born?"
   cob = gets.chomp
+  
+  puts "What height are they?"
+  height = gets.chomp
+
   # repeat while name is empty
   while !name.empty? do
       #Add student has to the array
-      students << {name: name, cohort: :november, hobby: hobby, cob: cob}
+      students << {name: name, cohort: :november, hobby: hobby, cob: cob, height: height}
       puts "Now we have #{students.count} students"
       name = gets.chomp
       if name.empty?
@@ -32,10 +38,11 @@ end
 def print(students)
   x = 0
   while x < students.count do
-      puts "#{students[x][:name]}, Hobby: #{students[x][:hobby]}, Place of birth: #{students[x][:cob]} (#{students[x][:cohort]} cohort)"
+      puts "#{students[x][:name]}, Hobby: #{students[x][:hobby]}, Height: #{students[x][:height]}, Place of birth: #{students[x][:cob]} (#{students[x][:cohort]} cohort)"
       x = x + 1
   end
 end
+
 # def print(students)
 #     students.each do |student|
 #         if student[:name].length < 12
@@ -44,6 +51,7 @@ end
 #     end
 # end
 # Print total number of students
+
 def print_footer(names)
   puts "Overall, we have #{names.count} great student"
 end
